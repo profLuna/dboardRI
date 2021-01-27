@@ -304,7 +304,7 @@ leaflet(width = "100%") %>%
             #            "3 Hi Burdens + Hi Priority Pops",
             #            "4 Hi Burdens + Hi Priority Pops"),
             position = "bottomleft") %>% 
-  setView(-71.5, 41.7, zoom = 8) %>% 
+  setView(-71.5, 41.7, zoom = 9) %>% 
   # addMiniMap() %>% 
   addScaleBar(position = "bottomright") %>% 
   addSearchFeatures(targetGroups  = 'muni', 
@@ -370,7 +370,7 @@ Environmental burdens and benefits span four domains:
 #                                  "2 categories", "1 category"))
 
 # create a wide table for use in dynamic highchart
-ri_cum_burdens <- read_csv("../tables/cum_burden.csv") %>% 
+ri_cum_burdens <- read_csv("../tables/RI_cum_burden.csv") %>% 
   as.data.frame() %>% 
   mutate(Group = recode(Group, "Minority" = "People of Color",
                         "No HS Dip" = "No HS Diploma")) %>%
@@ -385,10 +385,10 @@ ri_cum_burdens <- read_csv("../tables/cum_burden.csv") %>%
   as.data.frame()
 
 # store values for use in text
-LEH1 <- ri_cum_burdens %>% filter(Group == "Limited English HH") %>% select(`1 Burden`) %>% pull()
-LEH2 <- ri_cum_burdens %>% filter(Group == "Limited English HH") %>% select(`2 Burdens`) %>% pull()
-LEH4 <- ri_cum_burdens %>% filter(Group == "Limited English HH") %>% rowwise %>% summarize(Total = sum(c_across(2:5))) %>% pull()
-THH <- ri_cum_burdens %>% filter(Group == "Total HH") %>% rowwise %>% summarize(Total = sum(c_across(2:5))) %>% pull()
+LEH1 <- ri_cum_burdens %>% filter(Group == "RI Low Income") %>% select(`1 Burden`) %>% pull()
+LEH2 <- ri_cum_burdens %>% filter(Group == "RI Low Income") %>% select(`2 Burdens`) %>% pull()
+LEH4 <- ri_cum_burdens %>% filter(Group == "RI Low Income") %>% rowwise %>% summarize(Total = sum(c_across(2:5))) %>% pull()
+THH <- ri_cum_burdens %>% filter(Group == "Total Pop") %>% rowwise %>% summarize(Total = sum(c_across(2:5))) %>% pull()
 
 # create a function to generate chart, otherwise each series must be added manually. Thanks to https://ox-it.github.io/OxfordIDN_htmlwidgets/charts/StackedBarCharts/ for this solution!
 stacked_bar_chart <- function(data = NA,
@@ -450,7 +450,7 @@ stacked_bar_chart(data = ri_cum_burdens,
 
 This graph shows the categorical and cumulative percentages of a given population group that lives within areas designated as experiencing one or more of the highest transportation-related environmental burden categories. A highest burdened community is a block group in which there is a high percentage of one or more priority population groups (80th percentile for the state) AND they experience the highest burdens (80th percentile for the state) for one to four categories of environmental burdens (i.e., Emissions, Heat, Evacuation, or Transportation). 
 
-For example, `r LEH1`% of limited English speaking households (i.e., 'Limited English HH') in the state reside in Census block groups that experience 1 high environmental burden category, and `r LEH2`% reside in block groups experiencing 2 environmental burden categories. Cumulatively, `r LEH4`% of limited English speaking households live in communities experiencing 1 to 4 highest environmental burden categories. Compare this to the `r THH`% of all households in the state (i.e., 'Total HH') who experience these conditions. 
+For example, `r LEH1`% of people living in low income areas as defined by state policy (i.e., 'RI Low Income') reside in Census block groups that experience 1 high environmental burden category, and `r LEH2`% reside in block groups experiencing 2 environmental burden categories. Cumulatively, `r LEH4`% of people living in low income areas as defined by state policy experience 1 to 4 highest environmental burden categories. Compare this to the `r THH`% of the general population in the state (i.e., 'Total Pop') who experience these conditions. 
 
 <br>
 
@@ -477,7 +477,7 @@ sketch1 = htmltools::withTags(table(
   )
 ))
 
-read_csv("../tables/burdens_town.csv") %>% 
+read_csv("../tables/RI_burdens_town.csv") %>% 
   mutate(across(starts_with("Pct"), ~./100)) %>% # let DT do formatting
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch1) %>% 
@@ -507,7 +507,7 @@ sketch2 = htmltools::withTags(table(
   )
 ))
 
-read_csv("../tables/burdens_house.csv") %>% 
+read_csv("../tables/RI_burdens_house.csv") %>% 
   mutate(across(starts_with("Pct"), ~./100)) %>% # let DT do formatting
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch2) %>% 
@@ -535,7 +535,7 @@ sketch3 = htmltools::withTags(table(
   )
 ))
 
-read_csv("../tables/burdens_senate.csv") %>% 
+read_csv("../tables/RI_burdens_senate.csv") %>% 
   mutate(across(starts_with("Pct"), ~./100)) %>% # let DT do formatting
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch3) %>% 
