@@ -692,12 +692,12 @@ PopupEJ <- paste0(EJbgs$NAME, "<br/>",
                   "<b>Night Avg Temp (°F):</b> ", round(EJbgs$meanNightLST,1),"°", "<br/>",
                       "<b>Night Avg Temp percentile: </b>", round(EJbgs$meanNightLSTpctile*100,0))
 
-PopupHouse <- paste0("Rhode Island state House District ", "<b>",house_districts$REP_DIST,"</b>", " has ", "<b>",house_districts$BGs80thDayNight,"</b>", " <b>Block Groups</b> with high percentages of priority populations experiencing nighttime average land surface temperatures at the 80th percentile - ", round(min(ri_blkgrps_sf_Night$meanNightLST),1),"° - or higher.", "<br/>",
+PopupHouse <- paste0("Rhode Island state House District ", "<b>",house_districts$REP_DIST,"</b>", " has ", "<b>",house_districts$BGs80thNight,"</b>", " <b>Block Groups</b> with high percentages of priority populations experiencing nighttime average land surface temperatures at the 80th percentile - ", round(min(ri_blkgrps_sf_Night$meanNightLST),1),"° - or higher.", "<br/>",
                      "<b>MIN Night Avg Temp (°F):</b> ", round(house_districts$meanNightLST.min,1),"°", "<br/>",
                      "<b>MEAN Night Avg Temp (°F):</b> ", round(house_districts$meanNightLST.mean,1),"°", "<br/>",
                      "<b>MAX Night Avg Temp (°F):</b> ", round(house_districts$meanNightLST.max,1),"°")
 
-PopupSenate <- paste0("Rhode Island state Senate District ", "<b>",senate_districts$SEN_DIST,"</b>", " has ", "<b>",senate_districts$BGs80thDayNight,"</b>", " <b>Block Groups</b> with high percentages of priority populations experiencing nighttime average land surface temperatures at the 80th percentile - ", round(min(ri_blkgrps_sf_Night$meanNightLST),1),"° - or higher.", "<br/>",
+PopupSenate <- paste0("Rhode Island state Senate District ", "<b>",senate_districts$SEN_DIST,"</b>", " has ", "<b>",senate_districts$BGs80thNight,"</b>", " <b>Block Groups</b> with high percentages of priority populations experiencing nighttime average land surface temperatures at the 80th percentile - ", round(min(ri_blkgrps_sf_Night$meanNightLST),1),"° - or higher.", "<br/>",
                      "<b>MIN Night Avg Temp (°F):</b> ", round(senate_districts$meanNightLST.min,1),"°", "<br/>",
                      "<b>MEAN Night Avg Temp (°F):</b> ", round(senate_districts$meanNightLST.mean,1),"°", "<br/>",
                      "<b>MAX Night Avg Temp (°F):</b> ", round(senate_districts$meanNightLST.max,1),"°")
