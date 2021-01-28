@@ -86,7 +86,7 @@ ri_blkgrps_sf <- ri_blkgrps_sf_noBus %>%
 
 # join avg bus headways to each block group
 ri_blkgrps_sf <- ri_blkgrps_sf %>% 
-  left_join(., ri_bus_stopHeadway_df, by = "GEOID")
+  left_join(., ri_transit_stopHeadway_df, by = "GEOID")
 
 # join walkability scores and add category labels
 ri_blkgrps_sf <- ri_blkgrp_walkability_sf %>% 
@@ -401,7 +401,7 @@ ri_blkgrps_sf_Tcost <- ri_blkgrps_sf %>%
   ms_simplify(., keep = 0.1, keep_shapes = TRUE)
 
 # extract values for inline insertion
-H80th <- quantile(ri_blkgrps_sf$AvgStopHeadway, 0.8, na.rm = T)
+H80th <- round(quantile(ri_blkgrps_sf$AvgStopHeadway, 0.8, na.rm = T),1)
 Tcost80th <- round(quantile(ri_blkgrps_sf$hh7_t, 0.8, na.rm = T),1)
 
 # clean up "ri_blkgrps_sf$",
@@ -410,7 +410,7 @@ rm(list = ls(pattern = paste("muni", "_80th", "headway80th", "_tract", "houseNoB
 
 The most important benefit of a transportation system is the access it provides to opportunity – economic, educational, health care, civic life, and simple freedom of movement.  Lack of adequate access to transportation hinders these opportunities. 
 
-Although Rhode Island hosts more modes of transit than any other state in New England, almost 1.8 million people  - over 25% of the population - have no access to any form of public transit. Over 50% of the state’s population do not live within reasonable walking distance of a bus stop. In western Rhode Island, moderate income households face transportation cost burdens that exceed the costs of housing.
+Approximately 45% of the state’s population does not live within a reasonable distance of a bus stop. Almost 474,000 people in Rhode Island have no physical access to public transit. Transportation cost burdens for moderate income households are lowest in and around population centers and highest along the western edge of the state. The average transportation cost burden for moderate income households is 23% of household income, which is 44% higher than the US average. Compared to the general population, people over the age of 64 have the least access to public transit, experience the lowest frequencies of transit service, live in the least walkable areas, and experience the highest transportation cost burden.
 
 These interactive figures identify communities across Rhode Island that are most underserved and most sensitive to the quality of four transportation metrics: access to public transit, transit headways, neighborhood walkability, and transportation cost burden.  
 
@@ -1017,13 +1017,13 @@ Metrics of transportation access and adequacy:
 ### Bus Access
 
 ```{r graphBusAccess, fig.align="center", fig.cap="Percentage of population groups within 1/4 mile (400 meters) of a bus stop across Rhode Island."}
-ri_transitAccessPops_df %>% 
+ri_busAccessPops_df %>% 
   arrange(PctBus) %>% 
   mutate(PctBus = round(PctBus,1), 
          Status = case_when(
            Group == "Total Pop" ~ "State avg",
-           PctBus < ri_transitAccessPops_df[1,7] ~ "Below state avg",
-           PctBus > ri_transitAccessPops_df[1,7] ~ "Above state avg"),
+           PctBus < ri_busAccessPops_df[1,4] ~ "Below state avg",
+           PctBus > ri_busAccessPops_df[1,4] ~ "Above state avg"),
          Group = recode(Group, "Minority" = "People of Color",
                         "No HS Dip" = "No HS Diploma")) %>% 
   mutate(Group = factor(Group) %>% fct_reorder(PctBus, .desc = FALSE)) %>% 
