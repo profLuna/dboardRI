@@ -115,8 +115,8 @@ ri_blkgrps_sf <- ri_blkgrps_sf %>%
     lths80th = if_else(percent_rank(pct_lthsE) >= 0.8, "No HS Diploma", "NA"),
     pct2pov80th = if_else(percent_rank(pct2povE) >= 0.8, "Low Income", "NA"),
     eng_limit_pct80th = if_else(percent_rank(eng_limit_pctE) >= 0.8, "Limited English HH", "NA"),
-    RI_INCOME_80th = if_else(RI_INCOME == "I", "MA Low Income", "NA"),
-    RI_MINORITY_80th = if_else(RI_MINORITY == "M", "MA Minority", "NA"),
+    RI_INCOME_80th = if_else(RI_INCOME == "I", "RI Low Income", "NA"),
+    RI_MINORITY_80th = if_else(RI_MINORITY == "M", "RI Minority", "NA"),
     POPSlabel = gsub("^,*|(?<=,),|,*$", "", # get rid of extra commas
     str_remove_all( # get rid of NAs
       paste(Minority80th,
