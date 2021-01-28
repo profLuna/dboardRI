@@ -374,7 +374,7 @@ rm(list = ls(pattern = paste("muni", "_80th", "houseN", "senateN", "houseL", "se
 
 Heat is the leading cause of weather-related death in the U.S. Warmer air temperatures can also exacerbate air pollution, especially ground-level ozone. As the climate warms, heat presents both a direct and indirect threat to health and quality of life. 
 
-Almost 1.23 million people in Rhode Island live in areas with the highest day and nighttime temperatures, primarily in the eastern half of the state and the Springfield-Holyoke area. Limited English speaking households and people of color are disproportionately exposed to the highest daytime and nighttime temperatures.
+The Providence metropolitan area experiences the highest daytime temperatures and urban heat island effects. Higher nighttime temperatures are found further south and east with the highest temperatures and urban heat islands around Pawtucket southeast to Bristol. Almost 181,000 people live in areas with the highest daytime heat temperatures. Limited English speaking households, Rhode Island’s minority EJ block groups, and Rhode Island’s low income EJ block groups are more likely to experience the highest daytime and nighttime temperatures compared to the general population or other priority populations.
 
 These interactive figures identify communities across Rhode Island that are most overburdened and most vulnerable to three measures of ambient temperature: Day-Night average land surface temperatures (LST), the Urban Heat Island effect, and elevated nighttime LST.
 
