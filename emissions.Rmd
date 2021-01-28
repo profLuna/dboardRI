@@ -1019,8 +1019,8 @@ ri_towns %>%
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch1) %>% 
-  formatRound(., columns = c(2,3,5:7), digits = 1, mark = ",") %>% 
-  formatRound(., columns = 4, digits = 3, mark = ",")
+  formatRound(., columns = c(3,5:7), digits = 1, mark = ",") %>% 
+  formatRound(., columns = c(2,4), digits = 3, mark = ",")
 ```
 
 <!-- > Number of Census block groups with three or more cumualtive environmental burdens and high concentrations of populations of concern -->
@@ -1051,8 +1051,8 @@ house_districts %>%
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch2) %>% 
-  formatRound(., columns = c(2,3,5:7), digits = 1, mark = ",") %>% 
-  formatRound(., columns = 4, digits = 3, mark = ",")
+  formatRound(., columns = c(3,5:7), digits = 1, mark = ",") %>% 
+  formatRound(., columns = c(2,4), digits = 3, mark = ",")
 ```
 
 
@@ -1081,8 +1081,8 @@ senate_districts %>%
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
             container = sketch3) %>% 
-  formatRound(., columns = c(2,3,5:7), digits = 1, mark = ",") %>% 
-  formatRound(., columns = 4, digits = 3, mark = ",")
+  formatRound(., columns = c(3,5:7), digits = 1, mark = ",") %>% 
+  formatRound(., columns = c(2,4), digits = 3, mark = ",")
 ```
 
 
