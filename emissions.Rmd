@@ -772,15 +772,15 @@ PM25popAvg <- ri_blkgrp_sf %>%
   summarize(PM25wMean = weighted.mean(x = PM25_19, w = Pop, na.rm = TRUE),
             PM25Mean = mean(PM25_19, na.rm = TRUE)) %>% 
   spread(key = Group, value = PM25wMean) %>% 
-  transmute(Minority = (minorityE/PM25Mean - 1)*100,
+  transmute(Minority = (minorityE/totalpopE - 1)*100,
          #Minority_NHW = (minorityE/nhwhitepopE - 1)*100,
-         `Limited English HH` = (eng_limitE/PM25Mean - 1)*100,
-         `Low Income` = (num2povE/PM25Mean - 1)*100,
-         `No HS Dip` = (lthsE/PM25Mean - 1)*100,
-         `Under 5` = (under5E/PM25Mean - 1)*100,
-         `Over 64` = (over64E/PM25Mean - 1)*100,
-         `RI Low Income` = (RI_LOWINC/PM25Mean - 1)*100,
-         `RI Minority` = (RI_MINORITY/PM25Mean - 1)*100) %>%
+         `Limited English HH` = (eng_limitE/eng_hhE - 1)*100,
+         `Low Income` = (num2povE/totalpopE - 1)*100,
+         `No HS Dip` = (lthsE/totalpopE - 1)*100,
+         `Under 5` = (under5E/totalpopE - 1)*100,
+         `Over 64` = (over64E/totalpopE - 1)*100,
+         `RI Low Income` = (RI_LOWINC/totalpopE - 1)*100,
+         `RI Minority` = (RI_MINORITY/totalpopE - 1)*100) %>%
   gather(key = Group, value = Pct)
 
 # # clean up
@@ -854,15 +854,15 @@ DPMpopAvg <- ri_blkgrp_sf %>%
   summarize(DPMwMean = weighted.mean(x = DSLPM_19, w = Pop, na.rm = TRUE),
             DPMMean = mean(DSLPM_19, na.rm = TRUE)) %>% 
   spread(key = Group, value = DPMwMean) %>% 
-  transmute(Minority = (minorityE/DPMMean - 1)*100,
+  transmute(Minority = (minorityE/totalpopE - 1)*100,
          #Minority_NHW = (minorityE/nhwhitepopE - 1)*100,
-         `Limited English HH` = (eng_limitE/DPMMean - 1)*100,
-         `Low Income` = (num2povE/DPMMean - 1)*100,
-         `No HS Dip` = (lthsE/DPMMean - 1)*100,
-         `Under 5` = (under5E/DPMMean - 1)*100,
-         `Over 64` = (over64E/DPMMean - 1)*100,
-         `RI Low Income` = (RI_LOWINC/DPMMean - 1)*100,
-         `RI Minority` = (RI_MINORITY/DPMMean - 1)*100) %>%
+         `Limited English HH` = (eng_limitE/eng_hhE - 1)*100,
+         `Low Income` = (num2povE/totalpopE - 1)*100,
+         `No HS Dip` = (lthsE/totalpopE - 1)*100,
+         `Under 5` = (under5E/totalpopE - 1)*100,
+         `Over 64` = (over64E/totalpopE - 1)*100,
+         `RI Low Income` = (RI_LOWINC/totalpopE - 1)*100,
+         `RI Minority` = (RI_MINORITY/totalpopE - 1)*100) %>%
   gather(key = Group, value = Pct)
 
 # # clean up
@@ -939,15 +939,15 @@ PTRAFpopAvg <- ri_blkgrp_sf %>%
   summarize(DPMwMean = weighted.mean(x = PTRAF_19, w = Pop, na.rm = TRUE),
             DPMMean = mean(PTRAF_19, na.rm = TRUE)) %>% 
   spread(key = Group, value = DPMwMean) %>% 
-  transmute(`People of Color` = (minorityE/DPMMean - 1)*100,
+  transmute(`People of Color` = (minorityE/totalpopE - 1)*100,
          #Minority_NHW = (minorityE/nhwhitepopE - 1)*100,
-         `Limited English HH` = (eng_limitE/DPMMean - 1)*100,
-         `Low Income` = (num2povE/DPMMean - 1)*100,
-         `No HS Diploma` = (lthsE/DPMMean - 1)*100,
-         `Under 5` = (under5E/DPMMean - 1)*100,
-         `Over 64` = (over64E/DPMMean - 1)*100,
-         `RI Low Income` = (RI_LOWINC/DPMMean - 1)*100,
-         `RI Minority` = (RI_MINORITY/DPMMean - 1)*100) %>%
+         `Limited English HH` = (eng_limitE/eng_hhE - 1)*100,
+         `Low Income` = (num2povE/totalpopE - 1)*100,
+         `No HS Diploma` = (lthsE/totalpopE - 1)*100,
+         `Under 5` = (under5E/totalpopE - 1)*100,
+         `Over 64` = (over64E/totalpopE - 1)*100,
+         `RI Low Income` = (RI_LOWINC/totalpopE - 1)*100,
+         `RI Minority` = (RI_MINORITY/totalpopE - 1)*100) %>%
   gather(key = Group, value = Pct)
 
 # clean up
