@@ -997,8 +997,8 @@ For example, people living in neighborhoods classified as minority by state poli
 ```{r townTable, fig.align="center"}
 # create variables for use in inline text example to explain percentile ranks
 exPM25town <- ri_towns %>% as.data.frame() %>% filter(pctrank_PM25_19.mean > 95) %>% select(NAME) %>% slice_tail(n = 1) %>% pull()
-exPM25 <- ri_towns %>% as.data.frame() %>% filter(NAME == exTown) %>% select(PM25_19.mean) %>% pull() %>% round(., 3)
-exPM25pct <- ri_towns %>% as.data.frame() %>% filter(NAME == exTown) %>% select(pctrank_PM25_19.mean) %>% pull() %>% round(., 1)
+exPM25 <- ri_towns %>% as.data.frame() %>% filter(NAME == exPM25town) %>% select(PM25_19.mean) %>% pull() %>% round(., 3)
+exPM25pct <- ri_towns %>% as.data.frame() %>% filter(NAME == exPM25town) %>% select(pctrank_PM25_19.mean) %>% pull() %>% round(., 1)
 
 # create object to hold complex headers for table
 sketch1 = htmltools::withTags(table(
