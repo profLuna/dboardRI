@@ -1,6 +1,11 @@
 ---
-title: "Evacuation"
+title: "Rhode Island"
 ---
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
@@ -418,10 +423,12 @@ rm(list = ls(pattern = paste("ne_","muni", "hevac", "nfhza", "_tracts_",
                              "houseN", "senateN", "houseH", "senateH",
                              "ri_blkgrps_sf$", sep = "|")))
 ```
-
+---
+# Evacuation
 Flood and storm surge are significant risks in Rhode Island. In the event of extensive inland or coastal flooding, evacuation may be required. For individuals and households with limited mobility, either due to inadequate access to transportation options or because of physical limitations, evacuation presents heightened risk. Evacuation may also prove especially difficult for individuals and households due to limited economic resources, difficulty understanding or accessing information, or low trust in official sources of information. 
 
-Over 108,000 people in Rhode Island live in a FEMA flood risk zone and over 123,000 live in a hurricane evacuation zone. Those over 64 years of age, persons living with disabilities, and households without a car are disproportionately present in either a flood or a hurricane evacuation zone.
+* Over 108,000 people in Rhode Island live in a FEMA flood risk zone and over 123,000 live in a hurricane evacuation zone. 
+* Those over 64 years of age, persons living with disabilities, and households without a car are disproportionately present in either a flood or a hurricane evacuation zone.
 
 These interactive figures identify communities across Rhode Island that are most most vulnerable to the risks of inland flooding or coastal storm surge.
 

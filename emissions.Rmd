@@ -1,6 +1,11 @@
 ---
-title: "Emissions"
+title: "Rhode Island"
 ---
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
@@ -257,10 +262,12 @@ rm(list = ls(pattern = paste("muni", "_80th", "Emissions",
 # ri_blkgrps_sf <- ri_blkgrps_sf %>%
 #   select(BurdenCount, NAME, REP_DIST, SEN_DIST, TOWN, BURDENSlabel, POPSlabel)
 ```
-
+---
+# Emissions
 Transportation accounts for a significant share of air pollution. 
 
-Concentrations of hazardous air pollutants and associated risks are highest in in northern Rhode Island, primarily in the Providence metropolitan area. Limited English speaking households, Rhode Island’s minority EJ block groups, and Rhode Island’s low income EJ block groups experience the highest exposures to all emissions and related risks evaluated here.
+* Concentrations of hazardous air pollutants and associated risks are highest in in northern Rhode Island, primarily in the Providence metropolitan area. 
+* Limited English speaking households, Rhode Island’s minority EJ block groups, and Rhode Island’s low income EJ block groups experience the highest exposures to all emissions and related risks evaluated here.
 
 These interactive figures identify communities across Rhode Island that are most overburdened and most vulnerable to three transportation-related burdens: PM~2.5~, Diesel Particulate Matter (DPM), and Traffic Volume and Proximity.
 
